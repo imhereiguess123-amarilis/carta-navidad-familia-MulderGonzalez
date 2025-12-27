@@ -91,8 +91,8 @@
 
       <!-- SCREEN: HOME -->
       <section id="sHome" class="screen active">
-        <h1 class="titleGlow">🎄 Feliz Navidad / Merry Christmas 🎄</h1>
-        <p class="tiny">Tip: en celular toca la pantalla en el juego para saltar 👑</p>
+        <h1 class="titleGlow">🎄 Feliz Navidad 🎄</h1>
+        <p class="tiny">Tip: Toca el boton música y despúes Apretar aquí 👑</p>
 
         <div class="row">
           <button class="b1" id="btnOpen">Abrir carta 🎁</button>
@@ -103,12 +103,12 @@
         <p id="homeFrom"></p>
 
         <div class="row" id="homeActions" style="display:none;">
-          <button class="b2" id="btnNext">Siguiente 🎁</button>
+          <button class="b2" id="btnNext">Apretar aquí 🎁</button>
           <button class="b3" id="btnPesebre">Ver Pesebre ✨</button>
         </div>
 
         <p class="tiny" style="margin-top:14px;">
-          Nota: en iPhone/Android la música no puede iniciar sola: hay que apretar “Música”.
+          Nota: Apretar Música y después Apretar aquí.
         </p>
       </section>
 
@@ -119,7 +119,8 @@
           Que esta navidad y año nuevo sea<br>
           lleno de amor, risas y abrazos. ❤️<br><br>
           ¡Cariños y abrazos!<br>
-          Familia Mulder González
+          Familia Mulder González<br>
+          (Apretar juego para ver pesebre)
         </p>
         <div class="row">
           <button class="b4" data-go="sHome">Volver</button>
@@ -129,15 +130,14 @@
 
       <!-- SCREEN: CONTEXT -->
       <section id="sContext" class="screen">
-        <h2>✨ El camino al Pesebre ✨</h2>
+        <h2>✨ El camino a Belén ✨</h2>
         <p class="center">
           Jesús acaba de nacer en Belén.<br>
           Mientras unos pastores cuidan sus rebaños,<br><br>
           un ángel se les aparece y les anuncia:<br><br>
           «Hoy les ha nacido un Salvador».<br><br>
-          Los pastores van enseguida a Belén,<br>
-          pero el camino tiene obstáculos...<br><br>
-          ¡Ayúdales a avanzar saltando a tiempo! 👑
+          Los pastores van enseguida a Belén,<br><br>
+          ¡Ayúdales a avanzar saltando a tiempo! 🎮
         </p>
         <div class="row">
           <button class="b4" data-go="sHome">Volver</button>
@@ -179,7 +179,7 @@
 
   <!-- AUDIO (usa tus archivos locales) -->
   <audio id="audioMain" src="main.mp3" preload="auto" loop></audio>
-  <audio id="audioPesebre" src="pesebre.mp3" preload="auto" loop></audio>
+  <audio id="audioPesebre" src="nochedepaz.mp3" preload="auto" loop></audio>
 
   <script>
     // --- simple router ---
@@ -201,7 +201,7 @@
 
     $("btnOpen").addEventListener("click", () => {
       homeMsg.textContent = "Feliz nacimiento de Jesús y Navidad, con mucha felicidad, paz y mucho amor ✨";
-      homeFrom.textContent = "De: Mulder González ❤️";
+      homeFrom.textContent = "De: Familia Mulder González ❤️";
       homeActions.style.display = "flex";
     });
 
@@ -328,7 +328,7 @@
 
       // obstacle (bush)
       ctx.font = "28px system-ui, Apple Color Emoji, Segoe UI Emoji";
-      ctx.fillText("🌿🌿", obs.x - 8, obs.y + 30);
+      ctx.fillText("🌿🌿", obs.x - 8, obs.y + 18);
 
       // overlay game over
       if (gameOver) {
@@ -337,7 +337,7 @@
         ctx.fillStyle = "white";
         ctx.font = "bold 28px system-ui";
         ctx.textAlign = "center";
-        ctx.fillText("👑 GAME OVER 👑", canvas.width/2, 110);
+        ctx.fillText("👑 GAME OVER 🐑", canvas.width/2, 110);
         ctx.font = "bold 20px system-ui";
         ctx.fillText(`Puntos: ${score}`, canvas.width/2, 145);
         ctx.textAlign = "start";
